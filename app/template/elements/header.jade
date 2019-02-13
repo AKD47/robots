@@ -1,0 +1,24 @@
+header.header
+    .container
+        .row
+            .col-lg-12
+                .row
+                    .header__wrapper
+
+                        a(href="/").header__logo
+                            img(src='img/icons/h-logo.png' alt='logo')
+
+                        nav.header__navigation
+
+                            a#header-burger.header__trigger
+                                span
+                                span
+                                span
+
+                            //    вызов миксина в переменную 'list' с указаним элементов массива(названий страниц)
+                            - var list = ['עמוד הבית', 'אודות', 'שירותי החברה', 'טכנולוגיה', 'לקוחות', 'צור קשר'];
+                            - var link = ['/', '#services', '#about', '#tech', '#partners', '#contacts'];
+                                +top-menu(list, link)
+
+                        a.header__phone(href='tel:1-800-333-555')
+                            | 1-800-333-555

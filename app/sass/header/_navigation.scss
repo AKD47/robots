@@ -1,0 +1,122 @@
+.header {
+
+  &__navigation {
+    position: relative;
+    float: left;
+
+    @include breakpoint(max-width 600px) {
+      order: 3;
+      width: 100%;
+    }
+  }
+
+  &__nav {
+    @include display-flex(flex);
+    @include flex-wrap(wrap);
+    @include flex-direction(row-reverse);
+    @include justify-content(center);
+    position: relative;
+    float: left;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @include breakpoint(max-width 600px) {
+      display: none;
+      width: 100%;
+    }
+
+    > li {
+      position: relative;
+
+      @include breakpoint(max-width 600px) {
+        width: 100%;
+      }
+
+      > a {
+        position: relative;
+        float: left;
+        width: 100%;
+        color: #9b9b9b;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 0 15px;
+
+        @include breakpoint(max-width 600px) {
+          width: 100%;
+          text-align: center;
+        }
+
+        &:hover {
+          color: #00baff;
+        }
+      }
+
+      > a.menu-active {
+        color: #00baff;
+      }
+    }
+  }
+
+  &__trigger {
+    display: none;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -53px;
+    right: 12px;
+    background-color: #00baff;
+    border-radius: 50%;
+    z-index: 15;
+    cursor: pointer;
+
+    @include breakpoint(max-width 600px) {
+      display: block;
+    }
+
+    span {
+      display: block;
+      height: 2px;
+      width: 18px;
+      background-color: #fff;
+      position: absolute;
+      left: 50%;
+      margin-left: -9px;
+      top: 50%;
+      margin-top: -1px;
+    }
+
+    span:first-of-type {
+      transition: all 0.2s;
+      margin-top: -6px;
+      content: '';
+    }
+    span:last-of-type {
+      transition: all 0.2s;
+      margin-top: 4px;
+      content: '';
+    }
+  }
+
+  &__trigger.js-trigger-active {
+    background-color: #00baff;
+
+    span:nth-of-type(2) {
+      display: none;
+    }
+
+    span {
+      background-color: #fff;
+
+      &:first-of-type {
+        transform: rotate(135deg);
+        margin-top: 0;
+      }
+
+      &:last-of-type {
+        transform: rotate(-134deg);
+        margin-top: 0;
+      }
+    }
+  }
+}

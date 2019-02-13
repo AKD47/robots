@@ -1,0 +1,33 @@
+section#contacts.contacts
+    .container
+        .row
+            .col-lg-12
+                .row
+                    h3.contacts__title
+                        | ?מעוניין שנחזור אליך
+                    p.contacts__subtitle
+                        | אנא מלאו את הטופס הבא ונציג שלנו יחזור אליך בהקדם
+                    form.contacts__form
+                        .d-flex.justify-content-between.flex-row-reverse.flex-wrap
+                            .contacts__element
+                                label.name(for='contacts-name')
+                                    | *שם מלא
+                                input.field(type='text' name='name' minlength='20' id='contacts-name' dir='rtl' required)
+                                span.error
+                            .contacts__element
+                                label.name(for='contacts-email')
+                                    | *אימייל
+                                input.field(type='text' name='email' minlength='20' id='contacts-email' dir='rtl' required)
+                                span.error
+                            .contacts__element
+                                label.name(for='contacts-phone')
+                                    | *טלפון
+                                input.field(type='text' name='phone' minlength='20' id='contacts-phone' dir='rtl' required)
+                                span.error
+                            .contacts__element
+                                label.name(for='contacts-message')
+                                    | *סיבת הפניה
+                                input.field(type='text' name='message' id='contacts-message' dir='rtl' required)
+                                span.error
+                        input.top-banner__link.top-banner__link--blue(type='submit' value='שלח')
+
